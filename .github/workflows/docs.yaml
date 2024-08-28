@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout main
+      - name: Checkout docs-dev
         uses: actions/checkout@v3
         with:
-          path: master
+          path: docs-dev
 
       - name: Checkout gh-pages
         uses: actions/checkout@v3
