@@ -98,11 +98,18 @@ def simulator(request):
     return request.getfixturevalue(request.param)
 
 
-@pytest.fixture(params=[None], scope="function")
+@pytest.fixture(params=[None, "normal_summary_network"], scope="function")
 def summary_network(request):
     if request.param is None:
         return None
     return request.getfixturevalue(request.param)
+
+
+@pytest.fixture(scope="function")
+def normal_summary_network():
+    from bayesflow.networks import SummaryNetwork
+
+    return SummaryNetwork(base_distribution="normal")
 
 
 @pytest.fixture(scope="session")
