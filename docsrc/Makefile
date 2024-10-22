@@ -18,8 +18,8 @@ help:
 # copy rendered docs and .nojekyll (for github.io) to docs folder
 # remove example notebooks from source folder
 github:
-	@cp ../INSTALL.rst source/installation.rst
-	@cp ../CONTRIBUTING source/contributing.md
+# 	@cp ../INSTALL.rst source/installation.rst
+	@cp ../CONTRIBUTING.md source/contributing.md
 	@cp -a ../examples/. source/_examples
 	@rm -r source/_examples/in_progress
 	@make html
@@ -27,12 +27,18 @@ github:
 	@cp .nojekyll ../docs/.nojekyll
 	@rm -r _build/html/
 	@rm -r source/_examples
-	@rm source/installation.rst
+# 	@rm source/installation.rst
 	@rm source/contributing.md
 
 clean:
 	@rm -rf ../docs/*
 	@rm -rf _build
+
+clean-all:
+	@rm -rf ../docs/*
+	@rm -rf _build
+    # remove all files from source/api except for bayesflow.rst
+	@find source/api -type f ! -name 'bayesflow.rst' -exec rm -f {} +
 
 .PHONY: help Makefile
 

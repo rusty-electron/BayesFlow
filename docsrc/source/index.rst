@@ -122,4 +122,5 @@ Indices
    api/bayesflow
    installation
    contributing
+   bibliography
    about
