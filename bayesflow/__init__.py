@@ -1,7 +1,6 @@
 from . import (
     approximators,
     benchmarks,
-    callbacks,
     data_adapters,
     datasets,
     diagnostics,
@@ -12,7 +11,9 @@ from . import (
 )
 
 from .approximators import ContinuousApproximator
-from .datasets import OfflineDataset, OnlineDataset
+from .data_adapters import DataAdapter
+from .datasets import OfflineDataset, OnlineDataset, DiskDataset
+from .simulators import make_simulator
 
 
 def setup():

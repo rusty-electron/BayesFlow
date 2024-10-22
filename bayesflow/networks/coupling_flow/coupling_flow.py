@@ -26,7 +26,7 @@ class CouplingFlow(InferenceNetwork):
     In DAGM German Conference on Pattern Recognition (pp. 373-387). Springer, Cham.
 
     [4] Radev, S. T., Mertens, U. K., Voss, A., Ardizzone, L., & Köthe, U. (2020).
-    BayesFlow: Learning complex stochastic models with invertible neural networks.
+    BayesFlow: Learning complex stochastic simulators with invertible neural networks.
     IEEE Transactions on Neural Networks and Learning Systems.
 
     [5] Alexanderson, S., & Henter, G. E. (2020).
@@ -37,7 +37,7 @@ class CouplingFlow(InferenceNetwork):
     def __init__(
         self,
         depth: int = 6,
-        subnet: str = "mlp",
+        subnet: str | type = "mlp",
         transform: str = "affine",
         permutation: str | None = "random",
         use_actnorm: bool = True,
