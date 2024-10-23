@@ -127,16 +127,24 @@ z = keras.ops.convert_to_numpy(x)
 ### 4. Document your changes
 
 The documentation uses [sphinx](https://www.sphinx-doc.org/) and relies on [numpy style docstrings](https://numpydoc.readthedocs.io/en/latest/format.html) in classes and functions.
+
+You need to install the following python packages for setting up documentation generation:
+
+```
+pip install sphinx numpydoc myst-nb sphinx_design sphinx-book-theme
+```
+
 The overall *structure* of the documentation is manually designed. This also applies to the API documentation. This has two implications for you:
 
 1. If you add to existing submodules, the documentation will update automatically (given that you use proper numpy docstrings).
-2. If you add a new submodule or subpackage, you need to add a file to `docsrc/source/api` and a reference to the new module to the appropriate section of `docsrc/source/api/bayesflow.rst`.
+2. If you add a new submodule or subpackage, you need to add a reference to the new module to the appropriate section of `docsrc/source/api/bayesflow.rst`.
 
 You can re-build the documentation with
 
 ```bash
 cd docsrc
 make clean && make github
+# in case of issues, try `make clean-all`
 ```
 
 The entry point of the rendered documentation will be at `docs/index.html`.
